@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       SEO META TAGS
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free BMI Calculator Online – Instant Body Mass Index Check</title>
+  <meta name="description" content="Use our free BMI calculator to instantly check your Body Mass Index. Enter your height and weight to get your BMI score and health category. Fast, accurate, and private." />
+  <meta name="keywords" content="BMI calculator, body mass index, BMI checker, healthy weight, BMI chart, calculate BMI online" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="BMI Calculator" />
+  <link rel="canonical" href="https://your-domain.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free BMI Calculator Online" />
+  <meta property="og:description" content="Calculate your Body Mass Index instantly. Free, fast, and accurate." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/" />
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free BMI Calculator",
+    "url": "https://your-domain.com/",
+    "description": "Calculate your Body Mass Index instantly with our free online BMI calculator.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All"
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a healthy BMI?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A healthy BMI is between 18.5 and 24.9. Below 18.5 is underweight, 25–29.9 is overweight, and 30+ is considered obese."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is BMI calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMI is calculated using the formula: BMI = weight (kg) / height (m)². For example, a person weighing 70 kg with a height of 1.75 m has a BMI of 22.86."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Chosen for editorial, distinctive feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER / HERO
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="logo" aria-label="BMI Calculator Home">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">BMI<strong>Calc</strong></span>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#calculator">Calculator</a>
+        <a href="#about">About BMI</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         CALCULATOR SECTION
+         ============================================================ -->
+    <section class="hero-section" id="calculator" aria-labelledby="calc-heading">
+      <div class="hero-bg-text" aria-hidden="true">BMI</div>
+
+      <div class="calculator-card">
+        <div class="card-label" aria-hidden="true">Free Online Tool</div>
+        <h1 id="calc-heading">BMI Calculator</h1>
+        <p class="card-subtitle">Enter your measurements for an instant body mass index reading.</p>
+
+        <!-- Error Message -->
+        <div class="error-banner" id="errorBanner" role="alert" aria-live="polite" hidden>
+          <span class="error-icon">!</span>
+          <span id="errorText">Please enter valid values.</span>
+        </div>
+
+        <div class="input-group">
+          <label for="heightInput">
+            Height
+            <span class="unit-badge">cm</span>
+          </label>
+          <input
+            type="number"
+            id="heightInput"
+            name="height"
+            placeholder="e.g. 175"
+            min="50"
+            max="300"
+            step="0.1"
+            aria-describedby="heightHint"
+            autocomplete="off"
+          />
+          <span class="input-hint" id="heightHint">Valid range: 50 – 300 cm</span>
+        </div>
+
+        <div class="input-group">
+          <label for="weightInput">
+            Weight
+            <span class="unit-badge">kg</span>
+          </label>
+          <input
+            type="number"
+            id="weightInput"
+            name="weight"
+            placeholder="e.g. 70"
+            min="10"
+            max="300"
+            step="0.1"
+            aria-describedby="weightHint"
+            autocomplete="off"
+          />
+          <span class="input-hint" id="weightHint">Valid range: 10 – 300 kg</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="button"
+          id="calcBtn"
+          class="calc-btn"
+          aria-label="Calculate BMI"
+        >
+          <!-- Spinner (hidden by default) -->
+          <span class="spinner" id="spinner" aria-hidden="true"></span>
+          <span class="btn-text" id="btnText">Calculate BMI</span>
+        </button>
+
+        <p class="privacy-note">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          Your data is never stored. Calculations are private.
+        </p>
+      </div>
+
+      <!-- BMI Scale visual -->
+      <div class="bmi-scale-visual" aria-label="BMI scale reference">
+        <div class="scale-bar">
+          <div class="scale-seg underweight" style="width:20%">
+            <span>&lt;18.5</span>
+          </div>
+          <div class="scale-seg normal" style="width:28%">
+            <span>18.5–24.9</span>
+          </div>
+          <div class="scale-seg overweight" style="width:22%">
+            <span>25–29.9</span>
+          </div>
+          <div class="scale-seg obese" style="width:30%">
+            <span>≥30</span>
+          </div>
+        </div>
+        <div class="scale-labels">
+          <span>Underweight</span>
+          <span>Normal</span>
+          <span>Overweight</span>
+          <span>Obese</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEO ARTICLE SECTION
+         ============================================================ -->
+    <section class="content-section" id="about" aria-labelledby="about-heading">
+      <div class="content-inner">
+
+        <article class="seo-article">
+          <h2 id="about-heading">What Is BMI and Why Does It Matter?</h2>
+
+          <p>
+            Body Mass Index — commonly known as <strong>BMI</strong> — is one of the most widely used
+            screening tools in modern healthcare. Developed in the 19th century by Belgian mathematician
+            Adolphe Quetelet, it offers a quick, cost-free method for estimating whether a person's
+            weight falls within a healthy range relative to their height. While BMI is not a diagnostic
+            tool in itself, it serves as a reliable first indicator that can prompt further clinical
+            investigation.
+          </p>
+
+          <h3>How Is BMI Calculated?</h3>
+          <p>
+            The formula is elegantly simple. BMI equals a person's weight in kilograms divided by
+            the square of their height in metres:
+          </p>
+          <div class="formula-block" aria-label="BMI formula">
+            <strong>BMI = Weight (kg) ÷ Height (m)²</strong>
+          </div>
+          <p>
+            For example, someone weighing <strong>75 kg</strong> with a height of <strong>1.78 m</strong>
+            has a BMI of approximately <strong>23.7</strong> — squarely within the "Normal" range.
+            Our calculator handles this instantly; simply enter your height in centimetres and weight
+            in kilograms and receive your result in seconds.
+          </p>
+
+          <h3>BMI Categories Explained</h3>
+          <ul>
+            <li><strong>Underweight (BMI &lt; 18.5):</strong> May indicate nutritional deficiency, excessive dieting, or underlying illness. A doctor's evaluation is recommended.</li>
+            <li><strong>Normal / Healthy Weight (18.5 – 24.9):</strong> Associated with the lowest risk of weight-related health problems for most adults.</li>
+            <li><strong>Overweight (25 – 29.9):</strong> Suggests excess body weight that may increase risk of cardiovascular disease, type 2 diabetes, and joint problems.</li>
+            <li><strong>Obese (BMI ≥ 30):</strong> Linked to significantly elevated risk of serious conditions including heart disease, stroke, sleep apnoea, and certain cancers.</li>
+          </ul>
+
+          <h3>Why Tracking BMI Is Important</h3>
+          <p>
+            Understanding your BMI empowers you to take proactive steps toward better health.
+            Population-level data consistently shows that maintaining a healthy weight reduces the
+            risk of over 40 chronic diseases. According to the World Health Organization, obesity
+            has nearly tripled worldwide since 1975, making accessible tools like this calculator
+            more important than ever.
+          </p>
+          <p>
+            BMI is particularly useful for:
+          </p>
+          <ul>
+            <li>Tracking weight changes over time without clinical visits</li>
+            <li>Setting realistic, evidence-based fitness goals</li>
+            <li>Identifying when professional medical advice may be warranted</li>
+            <li>Providing context alongside other metrics such as waist circumference and blood pressure</li>
+          </ul>
+
+          <h3>Limitations of BMI</h3>
+          <p>
+            No single metric captures health completely. BMI does not distinguish between fat mass
+            and muscle mass — highly trained athletes may register as "overweight" despite excellent
+            metabolic health. It also does not account for age, sex, ethnicity, or fat distribution.
+            Always interpret your BMI result alongside lifestyle factors and, when in doubt, consult
+            a qualified healthcare professional.
+          </p>
+        </article>
+
+        <!-- ============================================================
+             FAQ SECTION
+             ============================================================ -->
+        <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+          <details class="faq-item">
+            <summary>What is a healthy BMI for adults?</summary>
+            <p>
+              For most adults aged 18–65, a healthy BMI falls between <strong>18.5 and 24.9</strong>.
+              This range is associated with the lowest risk of weight-related health conditions according
+              to WHO guidelines. Athletes or those with high muscle mass may have a higher BMI while
+              still being in excellent health.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is BMI the same for men and women?</summary>
+            <p>
+              The standard BMI formula and categories are the same for adult men and women. However,
+              women generally carry a higher proportion of body fat at any given BMI compared to men.
+              Some clinicians use sex-adjusted interpretations, but the WHO scale (18.5–24.9 healthy)
+              applies universally as a first-pass screening tool.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does BMI apply to children and teenagers?</summary>
+            <p>
+              Standard adult BMI thresholds do not apply to children. For those under 18, paediatricians
+              use <strong>BMI-for-age percentiles</strong>, which compare a child's BMI to growth
+              reference data for their age and sex. Our calculator is designed for adults only.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How accurate is BMI as a health measure?</summary>
+            <p>
+              BMI is a useful <em>population-level screening tool</em> but has known limitations
+              at the individual level. It cannot differentiate muscle from fat, does not reflect
+              fat distribution (visceral vs. subcutaneous), and does not capture other metabolic
+              markers. It should be used as one data point alongside waist circumference, blood
+              pressure, cholesterol, and lifestyle factors.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What should I do if my BMI is outside the healthy range?</summary>
+            <p>
+              If your BMI is below 18.5 or above 24.9, consider consulting your GP or a registered
+              dietitian for personalised guidance. Many factors influence healthy weight, including
+              genetics, medications, and underlying conditions. Small, sustainable changes to diet
+              and physical activity are generally more effective than rapid interventions.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is this BMI calculator free to use?</summary>
+            <p>
+              Yes — completely free, with no account required. Your height and weight data is used
+              only to perform the calculation and is never stored, logged, or shared with third parties.
+            </p>
+          </details>
+        </section>
+
+      </div><!-- /.content-inner -->
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p>© 2025 BMICalc · For informational purposes only · Not medical advice</p>
+      <p class="footer-links">
+        <a href="/privacy">Privacy</a> ·
+        <a href="/terms">Terms</a> ·
+        <a href="/sitemap.xml">Sitemap</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your BMI Result – Free BMI Calculator</title>
+  <meta name="description" content="View your BMI result and health category. Understand what your Body Mass Index means for your health." />
+  <meta name="robots" content="noindex, follow" /><!-- Result pages shouldn't be indexed -->
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body class="result-page">
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Back to BMI Calculator">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">BMI<strong>Calc</strong></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">← Calculate Again</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         TOP AD BANNER
+         ============================================================ -->
+    <div class="ad-zone ad-top" role="complementary" aria-label="Advertisement">
+      <div class="ad-placeholder">
+        <span class="ad-label">Advertisement</span>
+        <!-- Replace with your ad network tag, e.g. Google AdSense:
+             <ins class="adsbygoogle" ...></ins>
+        -->
+        <div class="ad-demo-content">Your 728×90 Banner Ad Here</div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         RESULT HERO
+         ============================================================ -->
+    <section class="result-hero" aria-labelledby="result-heading">
+      <div class="result-card" id="resultCard">
+
+        <div class="result-header">
+          <span class="result-label">Your Result</span>
+          <h1 id="result-heading">BMI Score</h1>
+        </div>
+
+        <!-- Big BMI number -->
+        <div class="bmi-display" id="bmiDisplay" aria-live="polite">
+          <span class="bmi-number" id="bmiNumber">--</span>
+          <div class="bmi-meta">
+            <span class="bmi-category" id="bmiCategory">–</span>
+            <span class="bmi-category-icon" id="categoryIcon" aria-hidden="true">○</span>
+          </div>
+        </div>
+
+        <!-- Gauge bar -->
+        <div class="gauge-container" role="img" id="gaugeContainer" aria-label="BMI gauge">
+          <div class="gauge-track">
+            <div class="gauge-fill" id="gaugeFill"></div>
+            <div class="gauge-needle" id="gaugeNeedle" aria-hidden="true"></div>
+          </div>
+          <div class="gauge-ticks" aria-hidden="true">
+            <span>10</span>
+            <span>18.5</span>
+            <span>25</span>
+            <span>30</span>
+            <span>40+</span>
+          </div>
+        </div>
+
+        <!-- Health message -->
+        <p class="health-message" id="healthMessage"></p>
+
+        <!-- Action Buttons -->
+        <div class="result-actions">
+          <button
+            type="button"
+            id="downloadBtn"
+            class="btn-primary"
+            aria-label="Download BMI result as text file"
+          >
+            ↓ Download Result
+          </button>
+          <a href="index.html" class="btn-secondary" aria-label="Calculate BMI again">
+            ↺ Calculate Again
+          </a>
+        </div>
+
+      </div><!-- /.result-card -->
+    </section>
+
+    <!-- ============================================================
+         MIDDLE AD SECTION
+         ============================================================ -->
+    <div class="ad-zone ad-middle" role="complementary" aria-label="Advertisement">
+      <div class="ad-placeholder">
+        <span class="ad-label">Advertisement</span>
+        <!-- Replace with your ad network tag -->
+        <div class="ad-demo-content">Your 300×250 Rectangle Ad Here</div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         CONTEXTUAL TIPS SECTION
+         ============================================================ -->
+    <section class="tips-section" aria-labelledby="tips-heading">
+      <div class="content-inner">
+        <h2 id="tips-heading">What's Next?</h2>
+        <div class="tips-grid" id="tipsGrid">
+          <!-- Populated by JS based on category -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BOTTOM AD SECTION
+         ============================================================ -->
+    <div class="ad-zone ad-bottom" role="complementary" aria-label="Advertisement">
+      <div class="ad-placeholder">
+        <span class="ad-label">Advertisement</span>
+        <!-- Replace with your ad network tag -->
+        <div class="ad-demo-content">Your 728×90 Footer Banner Ad Here</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p>© 2025 BMICalc · For informational purposes only · Not medical advice</p>
+      <p class="footer-links">
+        <a href="index.html">Calculator</a> ·
+        <a href="/privacy">Privacy</a> ·
+        <a href="/terms">Terms</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
