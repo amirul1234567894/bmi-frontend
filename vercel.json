@@ -1,3 +1,9 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/indexnow-key-2026.txt",
+      "dest": "/assets/indexnow-key-2026.txt"
+    }
+  ]
 }
