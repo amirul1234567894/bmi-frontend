@@ -2,27 +2,83 @@
 <html>
 <head>
   <title>Contact</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+
 </head>
 <body>
 
-  <h1>Contact Us</h1>
+  <div class="container">
 
-  <form action="https://formspree.io/f/xjgjkqlr" method="POST">
+    <h1>Contact Us</h1>
 
-    <label>Name</label><br>
-    <input type="text" name="name" required><br><br>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
 
-    <label>Email</label><br>
-    <input type="email" name="email" required><br><br>
+      <label>Name</label>
+      <input type="text" name="name" required>
 
-    <label>Message</label><br>
-    <textarea name="message" required></textarea><br><br>
+      <label>Email</label>
+      <input type="email" name="email" required>
 
-    <button type="submit">Send</button>
+      <label>Message</label>
+      <textarea name="message" rows="5" required></textarea>
 
-  </form>
+      <button type="submit">Send Message</button>
 
-  <p>Email: <a href="mailto:www.amirulsk2022@gmail.com">amirulsk2022@gmail.com</a></p>
+    </form>
+
+  </div>
 
 </body>
 </html>
